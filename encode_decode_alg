@@ -1,9 +1,8 @@
-
+numbers = {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5}
+keys = list(numbers.keys())
+val = list(numbers.values())
+stroke = ''
 def encode(st):
-    numbers = {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5}
-    keys = list(numbers.keys())
-    val = list(numbers.values())
-    stroke = ''
     for s in st:
       for num in range(len(numbers)):
         if s == keys[num]:
@@ -15,10 +14,6 @@ def encode(st):
     return stroke
     
 def decode(st):
-    numbers = {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5}
-    keys = list(numbers.keys())
-    val = list(numbers.values())
-    stroke = ''
     for s in st:
       for num in range(len(numbers)):
         if s == str(val[num]):
@@ -28,7 +23,6 @@ def decode(st):
         elif num == 4:
           stroke += s
     return stroke
-
 
 assert encode('hello') == 'h2ll4', 'Test failed'
 assert encode('How are you today?') == 'H4w 1r2 y45 t4d1y?', 'Test failed'
